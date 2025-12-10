@@ -53,7 +53,7 @@ To generate fresh personas, set `GENERATE_NEW_PERSONAS = True` (requires API cal
 ## Customer Segments
 
 | Segment | Description |
-|---------|-------------|---------------------|
+|---------|-------------|
 | Serious Runner | 15+ miles/week, training for races |
 | Casual Jogger | 1-2 times/week for health |
 | Fashion-Conscious | Style-focused, occasional exercise |
