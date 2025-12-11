@@ -45,6 +45,7 @@ To generate fresh personas, set `GENERATE_NEW_PERSONAS = True` (requires API cal
 ├── TinyTroupe_simple_demo.ipynb  # Main demo notebook
 ├── config.ini                     # TinyTroupe configuration
 ├── usa.json                       # US demographics (from official repo)
+├── result.csv                     # Survey results output from the notebook
 └── exported_personas/             # 30 pre-generated personas (3 segments × 10)
 ```
 
