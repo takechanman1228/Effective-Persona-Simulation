@@ -69,9 +69,10 @@ These insights demonstrate TinyTroupe's ability to surface **psychographic nuanc
 
 ## Related Resources
 
+- **PyData Global 2025 Slides**: [Google Slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)
 - **TinyTroupe**: [github.com/microsoft/TinyTroupe](https://github.com/microsoft/TinyTroupe)
 - **Paper**: [arxiv.org/abs/2507.09788](https://arxiv.org/abs/2507.09788)
-- **PyData Global 2025**: [pydata.org/global2025](https://pydata.org/global2025)
+- **PyData Global 2025 Slide**: [pydata.org/global2025](https://pydata.org/global2025)
 
 ## Questions & Collaboration
 Hajime Takeda - https://www.linkedin.com/in/hajime-takeda/
