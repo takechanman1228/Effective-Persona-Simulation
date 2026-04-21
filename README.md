@@ -42,14 +42,37 @@ To generate fresh personas, set `GENERATE_NEW_PERSONAS = True` (requires API cal
 
 ```
 .
-├── TinyTroupe_simple_demo.ipynb  # Main demo notebook
-├── config.ini                     # TinyTroupe configuration
-├── usa.json                       # US demographics (from official repo)
-├── result.csv                     # Survey results output from the notebook
-└── exported_personas/             # 30 pre-generated personas (3 segments × 10)
+├── TinyTroupe_simple_demo.ipynb              # Shoes concept test (original PyData demo)
+├── TinyTroupe_genz_skincare_demo.ipynb       # Gen Z skincare concept test (added 2026-04)
+├── config.ini                                 # TinyTroupe configuration (0.7.0 / gpt-5-mini)
+├── usa.json                                   # US demographics (from official repo)
+├── result.csv                                 # Shoes demo output
+├── result_genz_skincare_concept_c{1,2,3}.csv  # Gen Z demo: 3 C-copy variants
+├── exported_personas/                         # 30 pre-generated shoes personas
+└── exported_genz_skincare_personas/           # 10 pre-generated Gen Z personas
 ```
 
 **Note**: `usa.json` is sourced from the [official TinyTroupe repository](https://github.com/microsoft/TinyTroupe/blob/43d951eea015aea09972dc95537c9bbbc74ba207/publications/paper_artifacts_june-2025/information/populations/usa.json).
+
+## Gen Z Skincare Demo (added 2026-04)
+
+A second case study: a Gen Z US skincare concept test that parallels the [`claude-persona/demo/genz-skincare/`](../claude-persona/demo/genz-skincare/) experiment under a different engine.
+
+**Use Case**: 10 Gen Z personas (ages 18–28) synthesized via `TinyPersonFactory.create_factory_from_demography(usa.json)` evaluate three skincare concepts: Acne Control Serum (A), Barrier Repair Cream (B), Glow Boosting Toner (C).
+
+**What the notebook shows**: three C-copy variants tested in sequence (C1 → C2 → C3) to explore whether copy strength alone can overcome the systematic under-selection of "glow" language under `gpt-5-mini`'s reasoning bias.
+
+**Headline result**:
+
+| Run | A | B | C |
+|---|---:|---:|---:|
+| C1 ("evens skin tone") | 4 | 6 | **0** |
+| C2 ("supports a more even complexion") | 4 | 5 | **1** |
+| C3 ("visibly brightens…radiant even complexion") | 4 | 6 | **0** |
+
+Only C2 unlocks a vote for Concept C, and even then only from a persona whose occupation is Beauty Advisor — a signal that persona-side structure matters more than copy strength.
+
+Full writeup: [`../Doc/2026-04-21_tinytroupe_genz_skincare_learnings.md`](../Doc/2026-04-21_tinytroupe_genz_skincare_learnings.md).
 
 ## Customer Segments
 
