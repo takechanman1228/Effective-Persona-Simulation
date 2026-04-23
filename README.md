@@ -1,101 +1,64 @@
 # Effective Persona Simulation with TinyTroupe
 
-This repository contains materials from my [presentation](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing) at [PyData Global 2025](https://pydata.org/global2025).
+Two [TinyTroupe](https://github.com/microsoft/TinyTroupe) demo notebooks exploring **multi-agent persona simulation for product concept testing**. Originally prepared for [PyData Global 2025](https://pydata.org/global2025) ([slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)).
 
-## About This Demo
+## 👟 Demo 1 — [Shoes Concept Test](./demos/shoes/)
 
-This notebook demonstrates how to use [TinyTroupe](https://github.com/microsoft/TinyTroupe) for **multi-agent persona simulation** in a product concept testing scenario.
+30 personas (3 runner segments × 10) evaluate three running-shoe concepts to uncover psychographic nuances beyond demographic labels.
 
-**Use Case**: A footwear brand evaluates customer reception of three running shoe concepts across different consumer segments.
+→ [`demos/shoes/`](./demos/shoes/)
 
-**Workflow**:
-1. **Generate** diverse personas using TinyPersonFactory
-2. **Simulate** 1-on-1 depth interviews with each agent
-3. **Extract & Analyze** structured results
+## 🧴 Demo 2 — [Gen Z Skincare Concept Test](./demos/genz-skincare/)
 
-## Quick Start
+10 Gen Z (ages 18–28) personas evaluate three skincare concepts. Each persona explains its choice, rates purchase likelihood, and suggests one improvement; results are written to `result.csv`.
 
-### Prerequisites
+→ [`demos/genz-skincare/`](./demos/genz-skincare/)
+
+---
+
+## Quick start
 
 ```bash
 pip install git+https://github.com/microsoft/TinyTroupe.git@main
-pip install pandas matplotlib seaborn
+pip install pandas matplotlib seaborn jupyter
+
+export OPENAI_API_KEY=sk-...   # export before launching Jupyter
+
+cd demos/shoes        # or demos/genz-skincare
+jupyter lab
 ```
 
-### Setup
+Each demo folder is **self-contained** — it has its own `config.ini`, `usa.json`, `exported_personas/`, and notebook. No parent-path juggling needed.
 
-1. Clone this repository
-2. Set your OpenAI API key:
-   ```python
-   import os
-   os.environ["OPENAI_API_KEY"] = "your-api-key-here"
-   ```
-3. Open `TinyTroupe_simple_demo.ipynb` in Jupyter
-
-### Running the Demo
-
-The notebook is configured to **load pre-generated personas** by default (`GENERATE_NEW_PERSONAS = False`), so you can run the simulation immediately without waiting for persona generation.
-
-To generate fresh personas, set `GENERATE_NEW_PERSONAS = True` (requires API calls).
-
-## Repository Structure
+## Repository structure
 
 ```
 .
-├── TinyTroupe_simple_demo.ipynb              # Shoes concept test (original PyData demo)
-├── TinyTroupe_genz_skincare_demo.ipynb       # Gen Z skincare concept test (added 2026-04)
-├── config.ini                                 # TinyTroupe configuration (0.7.0 / gpt-5-mini)
-├── usa.json                                   # US demographics (from official repo)
-├── result.csv                                 # Shoes demo output
-├── result_genz_skincare_concept_c{1,2,3}.csv  # Gen Z demo: 3 C-copy variants
-├── exported_personas/                         # 30 pre-generated shoes personas
-└── exported_genz_skincare_personas/           # 10 pre-generated Gen Z personas
+├── README.md                  ← this file
+├── .gitignore
+├── demos/
+│   ├── shoes/                 ← Demo 1
+│   │   ├── README.md
+│   │   ├── TinyTroupe_shoes_demo.ipynb
+│   │   ├── config.ini
+│   │   ├── usa.json
+│   │   ├── exported_personas/
+│   │   └── result.csv
+│   └── genz-skincare/         ← Demo 2
+│       ├── README.md
+│       ├── TinyTroupe_genz_skincare_demo.ipynb
+│       ├── config.ini
+│       ├── usa.json
+│       └── result.csv
+└── archive/                   ← local experiments, gitignored
 ```
 
-**Note**: `usa.json` is sourced from the [official TinyTroupe repository](https://github.com/microsoft/TinyTroupe/blob/43d951eea015aea09972dc95537c9bbbc74ba207/publications/paper_artifacts_june-2025/information/populations/usa.json).
+## Related resources
 
-## Gen Z Skincare Demo (added 2026-04)
-
-A second case study: a Gen Z US skincare concept test that parallels the [`claude-persona/demo/genz-skincare/`](../claude-persona/demo/genz-skincare/) experiment under a different engine.
-
-**Use Case**: 10 Gen Z personas (ages 18–28) synthesized via `TinyPersonFactory.create_factory_from_demography(usa.json)` evaluate three skincare concepts: Acne Control Serum (A), Barrier Repair Cream (B), Glow Boosting Toner (C).
-
-**What the notebook shows**: three C-copy variants tested in sequence (C1 → C2 → C3) to explore whether copy strength alone can overcome the systematic under-selection of "glow" language under `gpt-5-mini`'s reasoning bias.
-
-**Headline result**:
-
-| Run | A | B | C |
-|---|---:|---:|---:|
-| C1 ("evens skin tone") | 4 | 6 | **0** |
-| C2 ("supports a more even complexion") | 4 | 5 | **1** |
-| C3 ("visibly brightens…radiant even complexion") | 4 | 6 | **0** |
-
-Only C2 unlocks a vote for Concept C, and even then only from a persona whose occupation is Beauty Advisor — a signal that persona-side structure matters more than copy strength.
-
-Full writeup: [`../Doc/2026-04-21_tinytroupe_genz_skincare_learnings.md`](../Doc/2026-04-21_tinytroupe_genz_skincare_learnings.md).
-
-## Customer Segments
-
-| Segment | Description |
-|---------|-------------|
-| Serious Runner | 15+ miles/week, training for races |
-| Casual Jogger | 1-2 times/week for health |
-| Fashion-Conscious | Style-focused, occasional exercise |
-
-## Insights Examples from this virtual survey
-The simulation reveals that segment labels don't tell the whole story:
-- A 74-year-old "Serious Runner" chose cushioning (B) over lightweight (A) due to joint issues
-- A CFO "Casual Jogger" chose lightweight (A) due to his optimization mindset
-- A minimalist "Fashion-Conscious" shopper chose lightweight (A) for its sleek design
-
-These insights demonstrate TinyTroupe's ability to surface **psychographic nuances** that simple demographics miss.
-
-## Related Resources
-
-- **PyData Global 2025 Slides**: [Google Slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)
+- **PyData Global 2025 slides**: [Google Slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)
 - **TinyTroupe**: [github.com/microsoft/TinyTroupe](https://github.com/microsoft/TinyTroupe)
 - **Paper**: [arxiv.org/abs/2507.09788](https://arxiv.org/abs/2507.09788)
-- **PyData Global 2025**: [pydata.org/global2025](https://pydata.org/global2025)
 
-## Questions & Collaboration
-Hajime Takeda - https://www.linkedin.com/in/hajime-takeda/
+## Questions & collaboration
+
+Hajime Takeda — [LinkedIn](https://www.linkedin.com/in/hajime-takeda/)
