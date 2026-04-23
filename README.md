@@ -10,7 +10,7 @@ Two [TinyTroupe](https://github.com/microsoft/TinyTroupe) demo notebooks explori
 
 ## 🧴 Demo 2 — [Gen Z Skincare Concept Test](./demos/genz-skincare/)
 
-10 Gen Z (ages 18–28) personas evaluate three skincare concepts. Each persona explains its choice, rates purchase likelihood, and suggests one improvement; results are written to `result.csv`.
+10 Gen Z (ages 18–28) personas first answer an open-ended discovery question (*"What frustrates you most about choosing skincare products?"*), then evaluate three skincare concepts. Results are written to `discovery.csv` and `result.csv`.
 
 → [`demos/genz-skincare/`](./demos/genz-skincare/)
 
@@ -49,6 +49,7 @@ Each demo folder is **self-contained** — it has its own `config.ini`, `usa.jso
 │       ├── TinyTroupe_genz_skincare_demo.ipynb
 │       ├── config.ini
 │       ├── usa.json
+│       ├── discovery.csv
 │       └── result.csv
 └── archive/                   ← local experiments, gitignored
 ```
