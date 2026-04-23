@@ -1,14 +1,21 @@
-# Effective Persona Simulation with TinyTroupe
+# Effective Persona Simulation
 
-Two [TinyTroupe](https://github.com/microsoft/TinyTroupe) demo notebooks exploring **multi-agent persona simulation for product concept testing**. Originally prepared for [PyData Global 2025](https://pydata.org/global2025) ([slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)).
+Two approaches to **multi-agent persona simulation for product concept testing**, shown side by side so you can compare how each handles the same kinds of product-concept questions:
 
-## 👟 Demo 1 — [Shoes Concept Test](./demo-tinytroupe/shoes/)
+- [**TinyTroupe**](https://github.com/microsoft/TinyTroupe) — Microsoft's Python framework for LLM-driven persona agents. Notebook-first; bring your own OpenAI key and execute.
+- [**claude-persona**](https://github.com/takechanman1228/claude-persona) — an agent-based persona research skill built on Claude Code. Natural-language commands; pre-generated results are already committed.
+
+Originally prepared for [PyData Global 2025](https://pydata.org/global2025) ([slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)).
+
+## TinyTroupe demos
+
+### 👟 Demo 1 — [Shoes Concept Test](./demo-tinytroupe/shoes/)
 
 30 personas (3 runner segments × 10) evaluate three running-shoe concepts to uncover psychographic nuances beyond demographic labels.
 
 → [`demo-tinytroupe/shoes/`](./demo-tinytroupe/shoes/)
 
-## 🧴 Demo 2 — [Gen Z Skincare Concept Test](./demo-tinytroupe/genz-skincare/)
+### 🧴 Demo 2 — [Gen Z Skincare Concept Test](./demo-tinytroupe/genz-skincare/)
 
 10 Gen Z (ages 18–28) personas first answer an open-ended discovery question (*"What frustrates you most about choosing skincare products?"*), then evaluate three skincare concepts. Results are written to `discovery.csv` and `result.csv`.
 
@@ -16,17 +23,17 @@ Two [TinyTroupe](https://github.com/microsoft/TinyTroupe) demo notebooks explori
 
 ---
 
-## Also showcased — claude-persona
+## claude-persona demos
 
-[claude-persona](https://github.com/takechanman1228/claude-persona) is an agent-based persona research skill built in parallel with this TinyTroupe exploration. The two demos below are snapshots of the claude-persona runs on the same kinds of product concepts, included here so conference attendees can compare the two engines side by side.
+Snapshots of [claude-persona](https://github.com/takechanman1228/claude-persona) runs on the same kinds of product concepts. Results are already committed — just browse the folders.
 
-### 👟 Demo 3 — [claude-persona Running Shoes](./demo-claude-persona/running-shoes/)
+### 👟 Demo 3 — [Running Shoes Concept Test](./demo-claude-persona/running-shoes/)
 
 15 AI personas rate three running-shoe concepts under the claude-persona skill (Sonnet-based).
 
 → [`demo-claude-persona/running-shoes/`](./demo-claude-persona/running-shoes/)
 
-### 🧴 Demo 4 — [claude-persona Gen Z Skincare](./demo-claude-persona/genz-skincare/)
+### 🧴 Demo 4 — [Gen Z Skincare Concept Test](./demo-claude-persona/genz-skincare/)
 
 10 Gen Z personas — same three skincare concepts as Demo 2 — run through claude-persona's ask + concept-test flow.
 
@@ -34,7 +41,7 @@ Two [TinyTroupe](https://github.com/microsoft/TinyTroupe) demo notebooks explori
 
 ---
 
-## Quick start (TinyTroupe demos)
+## Quick start — TinyTroupe demos
 
 ```bash
 pip install git+https://github.com/microsoft/TinyTroupe.git@main
