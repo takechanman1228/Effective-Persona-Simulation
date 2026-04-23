@@ -44,5 +44,6 @@ The notebook generates 10 Gen Z personas from `usa.json`, asks the discovery que
 | `TinyTroupe_genz_skincare_demo.ipynb` | main notebook (generate panel → discovery → concept test → comparison) |
 | `config.ini` | TinyTroupe configuration (v0.7.0 / `gpt-5-mini`) |
 | `usa.json` | US demographics (from official TinyTroupe repo) |
+| `exported_personas/` | the 10 persona specifications written by the notebook (one JSON per persona) |
 | `discovery.csv` | per-persona open-ended frustration responses |
 | `result.csv` | per-persona concept-test results |

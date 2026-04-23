@@ -49,6 +49,7 @@ Each demo folder is **self-contained** — it has its own `config.ini`, `usa.jso
 │       ├── TinyTroupe_genz_skincare_demo.ipynb
 │       ├── config.ini
 │       ├── usa.json
+│       ├── exported_personas/
 │       ├── discovery.csv
 │       └── result.csv
 └── archive/                   ← local experiments, gitignored
