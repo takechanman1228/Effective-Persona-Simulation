@@ -5,7 +5,7 @@ Two approaches to **multi-agent persona simulation for product concept testing**
 - [**TinyTroupe**](https://github.com/microsoft/TinyTroupe) — Microsoft's Python framework for LLM-driven persona agents. Notebook-first; bring your own OpenAI key and execute.
 - [**claude-persona**](https://github.com/takechanman1228/claude-persona) — an agent-based persona research skill built on Claude Code. Natural-language commands; pre-generated results are already committed.
 
-Originally prepared for [PyData Global 2025](https://pydata.org/global2025) ([slides](https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing)).
+Originally prepared for [ODSC AI East 2026](https://odsc.com/) ([slides](https://docs.google.com/presentation/d/1Ayt_GDsPkI1AWJdWn7OgN-W0_tPgM19eMUYEHb5R7zo/edit?usp=sharing)).
 
 ## TinyTroupe demos
 
