@@ -92,7 +92,7 @@ Each TinyTroupe demo folder is **self-contained** — it has its own `config.ini
 
 ## Related resources
 
-- **ODSC 2026 slides**: [Google Slides]([https://docs.google.com/presentation/d/1t2fMwrQxfEMZa7Eq0JMCj2au1Tg4YPugly1MihrcxZk/edit?usp=sharing](https://docs.google.com/presentation/d/1Ayt_GDsPkI1AWJdWn7OgN-W0_tPgM19eMUYEHb5R7zo/edit?usp=sharing))
+- **ODSC 2026 slides**: [Google Slides](https://docs.google.com/presentation/d/1Ayt_GDsPkI1AWJdWn7OgN-W0_tPgM19eMUYEHb5R7zo/edit?usp=sharing)
 - **TinyTroupe**: [github.com/microsoft/TinyTroupe](https://github.com/microsoft/TinyTroupe)
 - **Paper**: [arxiv.org/abs/2507.09788](https://arxiv.org/abs/2507.09788)
 
